@@ -1,0 +1,22 @@
+name: Boat odds test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pythonを準備
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 必要なライブラリをインストール
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: オッズ取得テスト
+        run: |
+          python boat_odds_test.py
