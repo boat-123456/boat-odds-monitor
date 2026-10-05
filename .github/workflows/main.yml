@@ -17,6 +17,13 @@ jobs:
         run: |
           pip install requests beautifulsoup4
 
-      - name: オッズ取得テスト
-        run: |
-          python boat_odds_test.py
+- name: ファイル確認
+  run: |
+    echo "現在の場所:"
+    pwd
+    echo "ファイル一覧:"
+    find . -maxdepth 3 -type f
+
+- name: オッズ取得テスト
+  run: |
+    python ./boat_odds_test.py
